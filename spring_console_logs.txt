@@ -1,0 +1,26 @@
+
+constructor
+2022-03-31 15:45:35.028 DEBUG 2412 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'demoApplication'
+2022-03-31 15:45:35.031 DEBUG 2412 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'binarySearchImpl'
+2022-03-31 15:45:35.040 DEBUG 2412 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'quickSortAlgorithm'
+2022-03-31 15:45:35.042 DEBUG 2412 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'binarySearchImpl' via constructor to bean named 'quickSortAlgorithm'
+
+
+/setter
+2022-03-31 15:47:30.440 DEBUG 30376 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'lifecycleProcessor' via factory method to bean named 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+2022-03-31 15:47:30.442 DEBUG 30376 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration'
+2022-03-31 15:47:30.373 DEBUG 30376 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'demoApplication'
+2022-03-31 15:47:30.376 DEBUG 30376 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'binarySearchImpl'
+2022-03-31 15:47:30.385 DEBUG 30376 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'quickSortAlgorithm'
+2022-03-31 15:47:30.387 DEBUG 30376 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'bubbleSortAlgorithm'
+
+no constructor/setter
+2022-03-31 15:54:10.164 DEBUG 17744 --- [           main] o.s.b.f.s.DefaultListableBeanFactory     : Autowiring by type from bean name 'lifecycleProcessor' via factory method to bean named 'spring.lifecycle-org.springframework.boot.autoconfigure.context.LifecycleProperties'
+
+
+
+Exception in thread "main" org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.example.basics.componentscan.ComponentDAO' available
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:351)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:342)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1172)
+	at com.example.demo.DemoComponentScanApplication.main(DemoComponentScanApplication.java:20)

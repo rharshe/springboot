@@ -1,0 +1,35 @@
+package  com.example;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+
+public class JpaStarterMain {
+    public static void main(String[] args) {
+    	
+//		   EntityManagerFactory entityManagerFactory= Persistence.createEntityManagerFactory("myApp");
+//		   EntityManager entityManager=entityManagerFactory.createEntityManager();
+//		   
+//		   Employee emp=entityManager.find(Employee.class,1);
+//		   System.out.println(emp);
+        Employee employee=new Employee();
+        employee.setId(1);
+        employee.setName("Foo Bar");
+        employee.setType(EmployeeType.FULL_TIME);
+
+        EntityManagerFactory entityManagerFactory= Persistence.createEntityManagerFactory("myApp");
+        EntityManager entityManager=entityManagerFactory.createEntityManager();
+        EntityTransaction transaction=entityManager.getTransaction();
+        transaction.begin();
+        entityManager.persist(employee);
+        transaction.commit();
+		   	Employee emp=entityManager.find(Employee.class,1);
+		   System.out.println(emp);
+		   employee.setId(1);
+	        employee.setName("NEW BAR");
+	        employee.setType(EmployeeType.CONTRACTOR);
+		   entityManager.close();
+		   entityManagerFactory.close();
+    }
+}
